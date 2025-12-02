@@ -75,6 +75,41 @@ docker-compose up -d
 
 ---
 
+## 📊 Generate Sample Data
+```bash
+# Generate 1000 fake e-commerce events
+python data_generator/generate_events.py
+```
+
+This creates:
+- `data/raw_events/events_TIMESTAMP.jsonl` — JSON Lines format (one event per line)
+- `data/raw_events/events_TIMESTAMP.csv` — CSV format for easy inspection
+
+**Event schema:**
+```json
+{
+  "event_id": "uuid",
+  "user_id": "user_0001",
+  "event_type": "page_view|add_to_cart|purchase",
+  "product_id": "prod_0001",
+  "product_name": "Innovative cloud solution",
+  "category": "Electronics|Clothing|Home|Sports|Books",
+  "price": 199.99,
+  "timestamp": "2025-11-15T14:30:00",
+  "device": "mobile|desktop|tablet",
+  "country": "US|BR|UK|DE|FR|CA",
+  "revenue": 199.99,  // only for purchases
+  "quantity": 2       // only for purchases
+}
+```
+
+---
+
+**Event distribution (realistic funnel):**
+- 60% page_view
+- 25% add_to_cart
+- 15% purchase
+
 ## 📂 Project Structure
 ```
 ├── data_generator/     # Fake event generation scripts
