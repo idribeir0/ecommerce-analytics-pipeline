@@ -138,7 +138,7 @@ This project demonstrates:
 ## 📈 Roadmap
 
 - [x] Project setup
-- [ ] Event generator
+- [x] Event generator
 - [ ] dbt models (staging → marts)
 - [ ] Airflow DAGs
 - [ ] FastAPI endpoints
